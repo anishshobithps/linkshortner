@@ -134,20 +134,25 @@ DATABASE_URL="mongodb+srv://myuser:MySecurePassword123@cluster0.abcdef.mongodb.n
 
 #### Beginner Challenges
 
-1. **URL Validation**
+1. **Handle CORS**
+   - Configure Cross-Origin Resource Sharing (CORS) to allow or restrict access to your API from different domains.
+   - Ensure only trusted domains can make requests to your backend.
+   - Check Hono Middlewares for information about cors in hono.
+
+2. **URL Validation**
    - Ensure the input URLs are valid before shortening.
    - Handle cases where users enter invalid or incomplete URLs.
    - Add domain whitelisting to restrict certain URLs.
 
-2. **URL Management**
+3. **URL Management**
    - Allow users to delete URLs they no longer need.
    - Implement a simple interface to manage shortened URLs.
 
-3. **Error Handling**
+4. **Error Handling**
    - Display clear and user-friendly error messages.
    - Handle edge cases gracefully, such as server downtime or invalid requests.
 
-4. **Basic Logging**
+5. **Basic Logging**
    - Log activities like URL creation, deletion, and errors.
    - Use these logs for debugging or understanding usage patterns.
 
