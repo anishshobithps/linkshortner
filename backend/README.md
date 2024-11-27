@@ -134,50 +134,70 @@ DATABASE_URL="mongodb+srv://myuser:MySecurePassword123@cluster0.abcdef.mongodb.n
 
 #### Beginner Challenges
 
-1. URL Validation
-   - Implement robust URL validation.
-   - Handle invalid URL scenarios.
-   - Add domain whitelisting.
+1. **URL Validation**
+   - Ensure the input URLs are valid before shortening.
+   - Handle cases where users enter invalid or incomplete URLs.
+   - Add domain whitelisting to restrict certain URLs.
 
-2. URL Management
-   - Add URL deletion functionality.
+2. **URL Management**
+   - Allow users to delete URLs they no longer need.
+   - Implement a simple interface to manage shortened URLs.
 
-3. Error Handling
-   - Provide descriptive error messages.
+3. **Error Handling**
+   - Display clear and user-friendly error messages.
+   - Handle edge cases gracefully, such as server downtime or invalid requests.
 
-4. Basic Logging
-   - Log system activities for debugging.
+4. **Basic Logging**
+   - Log activities like URL creation, deletion, and errors.
+   - Use these logs for debugging or understanding usage patterns.
+
+---
 
 #### Intermediate Challenges
 
-1. Authentication
- - Implement user registration/login
- - Associate URLs with users
+1. **Authentication**
+   - Implement user registration and login functionality.
+   - Allow users to view and manage their personal list of shortened URLs.
 
-2. Advanced URL Features
- - Support custom URL slugs
- - Implement slug uniqueness
- - Handle slug collision scenarios
+2. **Custom URL Slugs**
+   - Enable users to create custom slugs for their shortened URLs (e.g., `myshort.ly/custom-slug`).
+   - Ensure the slugs are unique and handle cases where a duplicate is attempted.
 
-3. Rate Limiting
- - Prevent URL creation abuse
- - Implement IP and user-based rate limits
+3. **Rate Limiting**
+   - Prevent abuse by limiting the number of URL shortening requests per IP or user.
+   - Implement mechanisms to block excessive requests gracefully.
+
+4. **Basic Analytics**
+   - Show how many times each shortened URL has been accessed.
+   - Provide a simple stats page for users to track their URL performance.
+
+---
 
 #### Advanced Challenges
 
-1. URL Lifecycle Management
- - Add expiration to shortened URLs
- - Create background jobs for URL cleanup
- - Implement automatic link invalidation
+1. **URL Lifecycle Management**
+   - Add expiration dates for shortened URLs (e.g., URLs expire after 7 days).
+   - Create background jobs to remove expired URLs automatically.
+   - Notify users before their links expire, if applicable.
 
+2. **Enhanced Analytics**
+   - Track the source of clicks (e.g., referrals from social media or direct visits).
+   - Provide geographic insights into where clicks are originating from.
+   - Build an analytics dashboard to visualize the data.
 
-2. Enhanced Analytics
- - Track click sources
- - Provide geographic click insights
- - Build a simple analytics dashboard
+3. **URL Safety Features**
+   - Show a preview of the destination URL before redirecting.
+   - Integrate safe browsing checks to block malicious links.
+   - Extract metadata like the title and description from the destination URL for better user experience.
 
+4. **Custom Domain Support**
+   - Allow users to use their own domains for shortened URLs.
+   - Provide an easy setup guide for integrating custom domains.
 
-3. URL Safety Features
- - Implement destination URL preview
- - Add safe browsing checks
- - Extract and store URL metadata
+5. **Global Redirection**
+   - Implement region-based redirection (e.g., redirect users in the US to a different link than users in Europe).
+   - Use IP geolocation to determine the user’s region.
+
+6. **API Integration**
+   - Provide a public API for developers to integrate URL shortening into their applications.
+   - Include features like authentication, rate limiting, and analytics in the API.
