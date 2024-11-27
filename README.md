@@ -52,4 +52,4 @@ The [frontend](./frontend/) is literally barebone and I have not done the implem
 - **Collaboration**: If you encounter any issues while working on either the frontend or backend, feel free to ask in the [Discord Server](https://discord.gg/274y3VRx). The community will be happy to help!
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](./LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
