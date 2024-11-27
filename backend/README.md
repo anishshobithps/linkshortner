@@ -119,7 +119,7 @@ mongodb+srv://<username>:<password>@<cluster-url>/<database-name>?<options>
 DATABASE_URL="mongodb+srv://myuser:MySecurePassword123@cluster0.abcdef.mongodb.net/linkshortener?retryWrites=true&w=majority&appName=LinkShortener"
 ```
 
-![!IMPORTANT]
+> [!IMPORTANT]
 > Update the `DATABASE_URL` in the `.env` file with your MongoDB Atlas connection string.
 
 ### Scripts
