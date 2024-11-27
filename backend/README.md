@@ -25,65 +25,95 @@ To set up and run the backend, ensure you have the following:
 
 ### Steps to Set Up the Backend
 
-> [!TIP]
-> If you haven't yet scaffolded the project, follow **Step 0**. If the project has already been scaffolded, skip to **Step 1**.
-
-> [!IMPORTANT]
-> Ensure the backend directory is created as part of the [linkshortner project structure](../README.md).
-
-#### 0. Scaffold the Project (If Needed)
-If the project is not yet set up, scaffold it using the following command:
-
-```sh
-npm create hono@latest backend
-```
-
-This will prompt you to choose some settings. Follow these steps:
-1. **Which template do you want to use?**
-   Select `nodejs`. (Up and Down arrow button)
-2. **Do you want to install project dependencies?**
-   Choose `Yes`.
-3. **Which package manager do you want to use?**
-   Select `npm`.
-
-Once the scaffolding is complete, you should see the following output:
-```
-create-hono version 0.14.2
-✔ Using target directory … backend
-✔ Cloning the template
-✔ Installing project dependencies
-🎉 Copied project files
-Get started with: cd backend
-```
-> [!IMPORTANT]
-> After scaffolding, navigate into the backend directory to continue the setup process.
-
 #### 1. Navigate to the Backend Directory
-Ensure you are in the backend folder:
 
 ```sh
 cd backend
 ```
-> [!TIP]
+
+> [!INFO]
 > Learn more about the `cd` command [here](https://man7.org/linux/man-pages/man1/cd.1p.html).
 
-#### 2. Install Dependencies (Optional)
-If you skipped scaffolding the project or need to install dependencies manually, run the following command:
+#### 2. Install project dependencies
 
 ```sh
 npm install
 ```
-> [!TIP]
+
+> [!INFO]
 > If you used the `npm create hono@latest backend` command, the dependencies were automatically installed during scaffolding. You can skip this step if that’s the case.
 
-#### 3. Install Prisma and Set It Up
-To initialize Prisma, run the following command:
+## 2. Environment Variables
+
+#### 1. Configure Environment Variables
+Copy the example environment file:
 
 ```sh
-npx prisma init
+# From the backend directory
+cp .env.example .env
 ```
 
-This will create the necessary Prisma configuration files, including a `.env` file where you can configure your database connection.
+#### 2. MongoDB Connection String Configuration
+The MongoDB connection string follows this format:
+
+```sh
+mongodb+srv://<username>:<password>@<cluster-url>/<database-name>?<options>
+```
+
+> [!IMPORTANT]
+> MongoDB Connection String: Critical Considerations 🔐
+
+#### 🔑 Username & Password Guidelines
+- **Credential Safety**:
+ - Use strong, unique credentials for your MongoDB Atlas database
+ - NEVER use default or easily guessable passwords
+ - Consider using a password manager for generation
+
+#### 🚫 Password Complexity Warning
+- **Avoid These in Passwords**:
+ - Special characters like `@`, `#`, `$`, `%`, `^`, `&`
+ - URL-reserved characters: `;`, `/`, `?`, `:`, `=`, `&`
+
+#### 🛡️ Password Generation Tips
+- Use alphanumeric combinations
+- Recommended format: `[A-Za-z0-9]{12,16}`
+- Example safe passwords:
+ - `SecureLink2024`
+ - `LinkShort3rV2`
+ - `M0ngoDB_User123`
+
+#### 🌐 Cluster URL Composition
+- **Location in MongoDB Atlas**:
+ - Find under "Connect" > "Drivers" section
+ - Typical format: `cluster0.abcdef.mongodb.net`
+ - Unique to your specific cluster
+
+#### 📦 Database Naming Convention
+- **Best Practices**:
+ - Use lowercase
+ - No spaces or special characters
+ - Descriptive and project-specific
+
+#### 🔗 Recommended Database Names
+- `linkshortener`
+- `urlminifier`
+- `shortener_db`
+
+#### ⚙️ Essential Connection Options
+
+```sh
+?retryWrites=true&w=majority&appName=LinkShortenerApp
+```
+
+- `retryWrites`: Ensures write operations retry on failure
+- `w=majority`: Confirms write to majority of replica set
+- `appName`: Helps in monitoring and tracking connections
 
 > [!TIP]
-> If you cloned the project and Prisma has already been initialized, you can skip this step.
+> 🚨 **Pro Tip**: Always use environment variables and never hardcode connection strings!
+
+
+#### Example Connection String:
+```sh
+DATABASE_URL="mongodb+srv://myuser:MySecurePassword123@cluster0.abcdef.mongodb.net/linkshor
+```
