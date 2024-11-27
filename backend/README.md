@@ -10,6 +10,7 @@ This is the backend service for the **Link Shortener** project, built using the 
 1. [Getting Started](#getting-started)
 2. [Environment Variables](#environment-variables)
 3. [Scripts](#scripts)
+4. [Challenges](#challenges)
 
 ## Getting Started
 
@@ -117,3 +118,66 @@ mongodb+srv://<username>:<password>@<cluster-url>/<database-name>?<options>
 ```sh
 DATABASE_URL="mongodb+srv://myuser:MySecurePassword123@cluster0.abcdef.mongodb.net/linkshortener?retryWrites=true&w=majority&appName=LinkShortener"
 ```
+
+![!IMPORTANT]
+> Update the `DATABASE_URL` in the `.env` file with your MongoDB Atlas connection string.
+
+### Scripts
+1. `npm run dev`: Runs the development server with live-reloading enabled for the `src` folder.
+2. `npm run build`: Compiles the TypeScript code and builds the application into the `dist` folder.
+3. `npm run start`: Starts the production server from the compiled `dist` folder.
+4. `npm run prisma:generate`: Generates the Prisma client for database interaction.
+5. `npm run prisma:migrate`: Applies migrations to the database during development.
+6. `npm run prisma:studio`: Opens Prisma Studio, a GUI for managing your database.
+
+### Challenges
+
+#### Beginner Challenges
+
+1. URL Validation
+   - Implement robust URL validation.
+   - Handle invalid URL scenarios.
+   - Add domain whitelisting.
+
+2. URL Management
+   - Add URL deletion functionality.
+
+3. Error Handling
+   - Provide descriptive error messages.
+
+4. Basic Logging
+   - Log system activities for debugging.
+
+#### Intermediate Challenges
+
+1. Authentication
+ - Implement user registration/login
+ - Associate URLs with users
+
+2. Advanced URL Features
+ - Support custom URL slugs
+ - Implement slug uniqueness
+ - Handle slug collision scenarios
+
+3. Rate Limiting
+ - Prevent URL creation abuse
+ - Implement IP and user-based rate limits
+
+#### Advanced Challenges
+
+1. URL Lifecycle Management
+ - Add expiration to shortened URLs
+ - Create background jobs for URL cleanup
+ - Implement automatic link invalidation
+
+
+2. Enhanced Analytics
+ - Track click sources
+ - Provide geographic click insights
+ - Build a simple analytics dashboard
+
+
+3. URL Safety Features
+ - Implement destination URL preview
+ - Add safe browsing checks
+ - Extract and store URL metadata
