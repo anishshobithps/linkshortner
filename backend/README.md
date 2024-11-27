@@ -31,7 +31,7 @@ To set up and run the backend, ensure you have the following:
 cd backend
 ```
 
-> [!INFO]
+> [!NOTE]
 > Learn more about the `cd` command [here](https://man7.org/linux/man-pages/man1/cd.1p.html).
 
 #### 2. Install project dependencies
@@ -40,7 +40,7 @@ cd backend
 npm install
 ```
 
-> [!INFO]
+> [!NOTE]
 > If you used the `npm create hono@latest backend` command, the dependencies were automatically installed during scaffolding. You can skip this step if that’s the case.
 
 ## 2. Environment Variables
@@ -115,5 +115,5 @@ mongodb+srv://<username>:<password>@<cluster-url>/<database-name>?<options>
 
 #### Example Connection String:
 ```sh
-DATABASE_URL="mongodb+srv://myuser:MySecurePassword123@cluster0.abcdef.mongodb.net/linkshor
+DATABASE_URL="mongodb+srv://myuser:MySecurePassword123@cluster0.abcdef.mongodb.net/linkshortener?retryWrites=true&w=majority&appName=LinkShortener"
 ```
