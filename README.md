@@ -42,9 +42,14 @@ The [frontend](./frontend/) is built using [Next.js](https://nextjs.org/) and [S
 
 ## Challenge
 
-Your task is to create the frontend for the same and improve it, I have shown during workshop a glance of it, but just follow the docs of shadcn and try it to build atleast the input box and you pass the URL there and it gets created in the database. If you are running into issues when doing it, make an ISSUE in the repository and someone might be help you in those regards.
+Your task is to implement and enhance the URL shortener project, with both frontend and backend components. Below are the challenges to work on, categorized into [Backend challenges](CHALLENGES.md/#backend-challenges) and [Frontend challenges](CHALLENGES.md/#frontend-challenges).
 
-More at [Challenges](./CHALLENGES.md)
+The [frontend](./frontend/) is literally barebone and I have not done the implementation of anything shown during the workshop, the hard task is for you to improve and learn.
+
+### Guidelines:
+
+- **Backend Setup**: Ensure your backend is running at [http://localhost:3001](http://localhost:3001) and the frontend at [http://localhost:3000](http://localhost:3000).
+- **Collaboration**: If you encounter any issues while working on either the frontend or backend, feel free to ask in the [Discord Server](https://discord.gg/274y3VRx). The community will be happy to help!
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE.md) file for details.
