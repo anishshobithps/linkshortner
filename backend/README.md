@@ -10,19 +10,9 @@ This is the backend service for the **Link Shortener** project, built using the 
 1. [Getting Started](#getting-started)
 2. [Environment Variables](#environment-variables)
 3. [Scripts](#scripts)
-4. [Challenges](#challenges)
+4. [Challenges](../CHALLENGES.md/#backend-challenges)
 
 ## Getting Started
-
-### Prerequisites
-
-To set up and run the backend, ensure you have the following:
-
-- **Node.js** (v20 or later)
-  It's recommended to use [Volta](https://volta.sh/) for managing Node.js versions effortlessly. Volta ensures compatibility and seamless version switching across projects.
-
-- **MongoDB Atlas Account**
-  Create a free cloud database by [signing up for MongoDB Atlas](https://www.mongodb.com/atlas). MongoDB Atlas provides a highly scalable and managed NoSQL database solution.
 
 ### Steps to Set Up the Backend
 
@@ -129,80 +119,3 @@ DATABASE_URL="mongodb+srv://myuser:MySecurePassword123@cluster0.abcdef.mongodb.n
 4. `npm run prisma:generate`: Generates the Prisma client for database interaction.
 5. `npm run prisma:migrate`: Applies migrations to the database during development.
 6. `npm run prisma:studio`: Opens Prisma Studio, a GUI for managing your database.
-
-### Challenges
-
-#### Beginner Challenges
-
-1. **Handle CORS**
-   - Configure Cross-Origin Resource Sharing (CORS) to allow or restrict access to your API from different domains.
-   - Ensure only trusted domains can make requests to your backend.
-   - Check Hono Middlewares for information about cors in hono.
-
-2. **URL Validation**
-   - Ensure the input URLs are valid before shortening.
-   - Handle cases where users enter invalid or incomplete URLs.
-   - Add domain whitelisting to restrict certain URLs.
-
-3. **URL Management**
-   - Allow users to delete URLs they no longer need.
-   - Implement a simple interface to manage shortened URLs.
-
-4. **Error Handling**
-   - Display clear and user-friendly error messages.
-   - Handle edge cases gracefully, such as server downtime or invalid requests.
-
-5. **Basic Logging**
-   - Log activities like URL creation, deletion, and errors.
-   - Use these logs for debugging or understanding usage patterns.
-
----
-
-#### Intermediate Challenges
-
-1. **Authentication**
-   - Implement user registration and login functionality.
-   - Allow users to view and manage their personal list of shortened URLs.
-
-2. **Custom URL Slugs**
-   - Enable users to create custom slugs for their shortened URLs (e.g., `myshort.ly/custom-slug`).
-   - Ensure the slugs are unique and handle cases where a duplicate is attempted.
-
-3. **Rate Limiting**
-   - Prevent abuse by limiting the number of URL shortening requests per IP or user.
-   - Implement mechanisms to block excessive requests gracefully.
-
-4. **Basic Analytics**
-   - Show how many times each shortened URL has been accessed.
-   - Provide a simple stats page for users to track their URL performance.
-
----
-
-#### Advanced Challenges
-
-1. **URL Lifecycle Management**
-   - Add expiration dates for shortened URLs (e.g., URLs expire after 7 days).
-   - Create background jobs to remove expired URLs automatically.
-   - Notify users before their links expire, if applicable.
-
-2. **Enhanced Analytics**
-   - Track the source of clicks (e.g., referrals from social media or direct visits).
-   - Provide geographic insights into where clicks are originating from.
-   - Build an analytics dashboard to visualize the data.
-
-3. **URL Safety Features**
-   - Show a preview of the destination URL before redirecting.
-   - Integrate safe browsing checks to block malicious links.
-   - Extract metadata like the title and description from the destination URL for better user experience.
-
-4. **Custom Domain Support**
-   - Allow users to use their own domains for shortened URLs.
-   - Provide an easy setup guide for integrating custom domains.
-
-5. **Global Redirection**
-   - Implement region-based redirection (e.g., redirect users in the US to a different link than users in Europe).
-   - Use IP geolocation to determine the user’s region.
-
-6. **API Integration**
-   - Provide a public API for developers to integrate URL shortening into their applications.
-   - Include features like authentication, rate limiting, and analytics in the API.
